@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Arcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-appearance="dark" data-theme="classic">
+    <div class="bg-orb orb-one"></div>
+    <div class="bg-orb orb-two"></div>
+    <div class="bg-orb orb-three"></div>
+
+    <main class="app-shell">
+      <section id="intro-screen" class="screen intro-screen">
+        <div class="glass hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">Snake Arcade</p>
+            <h1>Modern Snake with smooth motion and polished game feel.</h1>
+            <p class="hero-text">
+              Choose your pace, pick a map, switch the visual theme, and launch
+              into a responsive Snake experience built for desktop and mobile.
+            </p>
+          </div>
+
+          <div class="hero-grid">
+            <label class="control-block">
+              <span class="control-label">Map</span>
+              <select id="map-select"></select>
+            </label>
+            <div id="map-preview" class="info-card"></div>
+
+            <label class="control-block">
+              <span class="control-label">Speed</span>
+              <select id="difficulty-select"></select>
+            </label>
+            <div id="difficulty-preview" class="info-card"></div>
+
+            <label class="control-block">
+              <span class="control-label">Theme</span>
+              <select id="theme-select">
+                <option value="classic">Classic</option>
+                <option value="neon">Neon</option>
+                <option value="retro">Retro</option>
+              </select>
+            </label>
+            <div class="toggle-row">
+              <button id="appearance-toggle" class="chip-button" type="button">
+                Toggle Light/Dark
+              </button>
+              <button id="sound-toggle" class="chip-button" type="button">
+                Sound On
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <div class="hero-stat">
+              <span class="control-label">High Score</span>
+              <strong id="intro-high-score">0</strong>
+            </div>
+            <button id="start-button" class="primary-button" type="button">
+              Start Game
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="game-screen" class="screen hidden">
+        <div class="glass game-card">
+          <header class="topbar">
+            <div class="topbar-main">
+              <div class="metric">
+                <span class="control-label">Score</span>
+                <strong id="score">0</strong>
+              </div>
+              <div class="metric">
+                <span class="control-label">High Score</span>
+                <strong id="high-score">0</strong>
+              </div>
+              <div class="metric">
+                <span class="control-label">Status</span>
+                <strong id="status-text">Ready</strong>
+              </div>
+              <div class="metric">
+                <span class="control-label">Bonus</span>
+                <strong id="bonus-text">No bonus</strong>
+              </div>
+            </div>
+
+            <div class="topbar-actions">
+              <button id="pause-button" class="chip-button" type="button">Pause</button>
+              <button id="restart-button" class="chip-button" type="button">Restart</button>
+              <button id="back-button" class="chip-button" type="button">Menu</button>
+            </div>
+          </header>
+
+          <div class="subbar">
+            <div class="pill">
+              <span class="control-label">Map</span>
+              <strong id="active-map"></strong>
+            </div>
+            <div class="pill">
+              <span class="control-label">Speed</span>
+              <strong id="active-difficulty"></strong>
+            </div>
+            <div class="pill">
+              <span class="control-label">Theme</span>
+              <strong id="active-theme"></strong>
+            </div>
+          </div>
+
+          <div class="board-wrap">
+            <div id="board-shell" class="board-shell">
+              <canvas id="game-canvas" aria-label="Snake game board"></canvas>
+              <div id="overlay" class="overlay hidden">
+                <div class="overlay-card">
+                  <p id="overlay-kicker" class="eyebrow">Paused</p>
+                  <h2 id="overlay-title">Ready?</h2>
+                  <p id="overlay-text">Press any direction to begin moving.</p>
+                  <button
+                    id="overlay-button"
+                    class="primary-button hidden"
+                    type="button"
+                  >
+                    Play Again
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-panel">
+            <p class="instructions">
+              Arrow keys or WASD on desktop. Swipe anywhere on the board on mobile.
+            </p>
+
+            <div class="touch-pad" aria-label="Touch controls">
+              <button class="control-button" data-direction="up" type="button">Up</button>
+              <div class="touch-row">
+                <button class="control-button" data-direction="left" type="button">Left</button>
+                <button class="control-button" data-direction="down" type="button">Down</button>
+                <button class="control-button" data-direction="right" type="button">Right</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
