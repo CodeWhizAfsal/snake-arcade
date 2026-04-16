@@ -19,55 +19,74 @@
 
     <main class="app-shell">
       <section id="intro-screen" class="screen intro-screen">
-        <div class="glass hero-card">
-          <div class="hero-copy">
-            <p class="eyebrow">Snake Arcade</p>
-            <h1>Modern Snake with smooth motion and polished game feel.</h1>
-            <p class="hero-text">
-              Choose your pace, pick a map, switch the visual theme, and launch
-              into a responsive Snake experience built for desktop and mobile.
-            </p>
-          </div>
+        <div class="intro-stage">
+          <div class="intro-halo intro-halo-a"></div>
+          <div class="intro-halo intro-halo-b"></div>
+          <div class="intro-gridlines"></div>
 
-          <div class="hero-grid">
-            <label class="control-block">
-              <span class="control-label">Map</span>
-              <select id="map-select"></select>
-            </label>
-            <div id="map-preview" class="info-card"></div>
+          <div class="intro-hero">
+            <div class="intro-copy">
+              <p class="eyebrow">Snake Arcade</p>
+              <h1>Curve. Drift. Survive the neon flow.</h1>
+              <p class="hero-text">
+                A modern snake run with fluid motion, glowing trails, bonus pickups,
+                and responsive controls across desktop and mobile.
+              </p>
+            </div>
 
-            <label class="control-block">
-              <span class="control-label">Speed</span>
-              <select id="difficulty-select"></select>
-            </label>
-            <div id="difficulty-preview" class="info-card"></div>
-
-            <label class="control-block">
-              <span class="control-label">Theme</span>
-              <select id="theme-select">
-                <option value="classic">Classic</option>
-                <option value="neon">Neon</option>
-                <option value="retro">Retro</option>
-              </select>
-            </label>
-            <div class="toggle-row">
-              <button id="appearance-toggle" class="chip-button" type="button">
-                Toggle Light/Dark
-              </button>
-              <button id="sound-toggle" class="chip-button" type="button">
-                Sound On
-              </button>
+            <div class="hero-centerpiece">
+              <div class="title-stack">
+                <p class="mode-badge">Arcade Landing</p>
+                <div class="title-emblem">
+                  <span class="emblem-ring"></span>
+                  <span class="emblem-core"></span>
+                </div>
+                <button id="start-button" class="primary-button start-cta" type="button">
+                  Start Game
+                </button>
+              </div>
             </div>
           </div>
 
-          <div class="hero-actions">
-            <div class="hero-stat">
-              <span class="control-label">High Score</span>
-              <strong id="intro-high-score">0</strong>
+          <div class="glass intro-dock">
+            <div class="intro-stats">
+              <div class="hero-stat">
+                <span class="control-label">High Score</span>
+                <strong id="intro-high-score">0</strong>
+              </div>
+              <div id="map-preview" class="info-card compact-info"></div>
+              <div id="difficulty-preview" class="info-card compact-info"></div>
             </div>
-            <button id="start-button" class="primary-button" type="button">
-              Start Game
-            </button>
+
+            <div class="hero-grid intro-controls">
+              <label class="control-block">
+                <span class="control-label">Map</span>
+                <select id="map-select"></select>
+              </label>
+
+              <label class="control-block">
+                <span class="control-label">Speed</span>
+                <select id="difficulty-select"></select>
+              </label>
+
+              <label class="control-block">
+                <span class="control-label">Theme</span>
+                <select id="theme-select">
+                  <option value="classic">Classic</option>
+                  <option value="neon">Neon</option>
+                  <option value="retro">Retro</option>
+                </select>
+              </label>
+
+              <div class="toggle-row intro-toggle-row">
+                <button id="appearance-toggle" class="chip-button" type="button">
+                  Toggle Light/Dark
+                </button>
+                <button id="sound-toggle" class="chip-button" type="button">
+                  Sound On
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
