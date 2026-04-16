@@ -24,6 +24,17 @@
           <div class="intro-halo intro-halo-b"></div>
           <div class="intro-gridlines"></div>
 
+          <div class="intro-topline">
+            <div class="topline-pill">
+              <span class="control-label">Mode</span>
+              <strong>Solo Arcade</strong>
+            </div>
+            <div class="topline-pill">
+              <span class="control-label">Best Run</span>
+              <strong id="intro-high-score">0</strong>
+            </div>
+          </div>
+
           <div class="intro-hero">
             <div class="intro-copy">
               <p class="eyebrow">Snake Arcade</p>
@@ -36,7 +47,7 @@
 
             <div class="hero-centerpiece">
               <div class="title-stack">
-                <p class="mode-badge">Arcade Landing</p>
+                <p class="mode-badge">Ready To Launch</p>
                 <div class="title-emblem">
                   <span class="emblem-ring"></span>
                   <span class="emblem-core"></span>
@@ -44,29 +55,33 @@
                 <button id="start-button" class="primary-button start-cta" type="button">
                   Start Game
                 </button>
+                <p class="launch-note">Choose a setup below, then drop straight into the run.</p>
               </div>
             </div>
           </div>
 
           <div class="glass intro-dock">
-            <div class="intro-stats">
-              <div class="hero-stat">
-                <span class="control-label">High Score</span>
-                <strong id="intro-high-score">0</strong>
+            <div class="intro-dock-header">
+              <div>
+                <p class="control-label">Run Setup</p>
+                <h2 class="dock-title">Dial in the next attempt</h2>
               </div>
-              <div id="map-preview" class="info-card compact-info"></div>
-              <div id="difficulty-preview" class="info-card compact-info"></div>
+              <p class="dock-copy">
+                Keep the flow simple: pick a map, set the pace, choose the theme, then start.
+              </p>
             </div>
 
             <div class="hero-grid intro-controls">
               <label class="control-block">
                 <span class="control-label">Map</span>
                 <select id="map-select"></select>
+                <div id="map-preview" class="inline-preview"></div>
               </label>
 
               <label class="control-block">
                 <span class="control-label">Speed</span>
                 <select id="difficulty-select"></select>
+                <div id="difficulty-preview" class="inline-preview"></div>
               </label>
 
               <label class="control-block">
@@ -94,22 +109,24 @@
       <section id="game-screen" class="screen hidden">
         <div class="glass game-card">
           <header class="topbar">
-            <div class="topbar-main">
-              <div class="metric">
+            <div class="topbar-main compact-hud">
+              <div class="metric metric-large">
                 <span class="control-label">Score</span>
                 <strong id="score">0</strong>
               </div>
-              <div class="metric">
-                <span class="control-label">High Score</span>
+              <div class="metric metric-large">
+                <span class="control-label">Best</span>
                 <strong id="high-score">0</strong>
               </div>
-              <div class="metric">
-                <span class="control-label">Status</span>
-                <strong id="status-text">Ready</strong>
-              </div>
-              <div class="metric">
-                <span class="control-label">Bonus</span>
-                <strong id="bonus-text">No bonus</strong>
+              <div class="status-cluster">
+                <div class="metric status-chip">
+                  <span class="control-label">State</span>
+                  <strong id="status-text">Ready</strong>
+                </div>
+                <div class="metric status-chip bonus-chip">
+                  <span class="control-label">Bonus</span>
+                  <strong id="bonus-text">No bonus</strong>
+                </div>
               </div>
             </div>
 
@@ -152,6 +169,17 @@
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div class="feedback-strip">
+            <div class="feedback-card">
+              <span class="control-label">Goal</span>
+              <strong>Chain 4 fruit to trigger bonus food</strong>
+            </div>
+            <div class="feedback-card">
+              <span class="control-label">Control</span>
+              <strong>Steer early for smooth curves around obstacles</strong>
             </div>
           </div>
 
